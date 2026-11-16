@@ -10,7 +10,7 @@ CATEGORIES=[
     "Other"
 ]
 
-def validate_titlr(title):
+def validate_title(title):
     title=title.strip()
 
     if not title:
