@@ -23,3 +23,9 @@ def validate_amount(amount):
         invalidExpense("Amount must be number")
     if amount<=0:
         invalidExpense("Amout must be grader 0")
+    return amount
+def validate_category(category):
+    category=category.strip().lower()
+    if not category:
+        invalidExpense()
+    return category
