@@ -27,5 +27,5 @@ def validate_amount(amount):
 def validate_category(category):
     category=category.strip().lower()
     if not category:
-        invalidExpense()
+        invalidExpense("Sehv Catogory")
     return category
