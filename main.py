@@ -41,7 +41,12 @@ def app():
 
           return expense
        elif choice==2:
-          show_expenses(Title,Amount,Categories)
+          show=load_expenses(Title,Amount,Categories)
+          for ab in expenses:
+             if show in expenses:
+                ab[show_expenses(Title,Amount,Categories)]
+             else:
+                print("File not found")
        elif choice==3:
           Title=input("Enter Title:")
           Amount=input("Enter Amount:")
@@ -51,7 +56,7 @@ def app():
           print("Expense Updateded Succsesfuly")
        elif choice==4:
           Id=int(input("ID daxil et:"))
-          expenses=load_expenses
+          expenses=load_expenses()
           for a in expenses:
              if Id in a["ID"]:
                 expenses=delete_expense(Title,Amount,Categories)
@@ -59,19 +64,29 @@ def app():
                 print("ID not Found")
        elif choice==5:
           Titlee=input("Enter title:")
-          expenses=load_expenses
+          expenses=load_expenses()
           for ab in expenses:
              if Titlee in expenses:
                 ab[show_expenses(Title,Amount,Categories)]
              else:
                 print("Title not found")
        elif choice==6:
-        total_exspenses()
+          Ammount=load_expenses(Amount)
+          for ab in expenses:
+             if Ammount in expenses:
+                ab[total_exspenses(Amount)]
+             else:
+                print("Title not found")
        elif choice==7:
          for ca in CATEGORIES:
            print(ca)
        elif choice==8:
-          export_to_CSV()
+          Csv=load_expenses(Title,Amount,Categories)
+          for ab in expenses:
+             if Csv in expenses:
+                ab[export_to_CSV(Title,Amount,Categories)]
+             else:
+                print("File not found")
        elif choice==0:
           print("App was exiting...")
           break
