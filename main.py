@@ -48,6 +48,25 @@ def app():
           Categories=input("Enter Category:")
 
           expense=update_exspenses(Title,Amount,Categories)
-          print("Expense Updateded Succsesfuly") 
+          print("Expense Updateded Succsesfuly")
+       elif choice==4:
+          Id=int(input("ID daxil et:"))
+          expenses=load_expenses
+          for a in expenses:
+             if Id in a["ID"]:
+                expenses=delete_expense(Title,Amount,Categories)
+             else:
+                print("ID not Found")
+       elif choice==5:
+          Titlee=input("Enter title:")
+          expenses=load_expenses
+          for ab in expenses:
+             if Titlee in expenses:
+                ab[show_expenses(Title,Amount,Categories)]
+             else:
+                print("Title not found")
+       elif choice==6:
+        total = sum(float(expense["Amount"]) for expense in expenses)
+        print("Total Expenses:", total)  
     except:
        print("There Have Problem")
