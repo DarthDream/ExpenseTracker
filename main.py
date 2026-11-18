@@ -36,8 +36,12 @@ def app():
 
           expense=add_exspenses(Title,Amount,Categories)
           print("Expense Added Succsesfuly")
-          print(show_expenses "ID")
+          print("Expense ID:", expense["ID"])
+
 
           return expense
+       elif choice==2:
+          show_expenses()
+         
     except:
        print("There Have Problem")
