@@ -42,6 +42,12 @@ def app():
           return expense
        elif choice==2:
           show_expenses()
-         
+       elif choice==3:
+          Title=input("Enter Title:")
+          Amount=input("Enter Amount:")
+          Categories=input("Enter Category:")
+
+          expense=update_exspenses(Title,Amount,Categories)
+          print("Expense Updateded Succsesfuly") 
     except:
        print("There Have Problem")
