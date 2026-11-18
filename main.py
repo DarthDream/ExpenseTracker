@@ -2,6 +2,7 @@ from exspenses import*
 from validation import*
 from reports import*
 
+
 def show_menu():
     print("="*40)
     print("            EXPENSE TRACKER           ")
@@ -22,6 +23,7 @@ def show_menu():
 
     ''')
     print("="*40)
+    
 
 def app():
    while True:
@@ -80,6 +82,7 @@ def app():
        elif choice==7:
          for ca in CATEGORIES:
            print(ca)
+             
        elif choice==8:
           Csv=load_expenses(Title,Amount,Categories)
           for ab in expenses:
