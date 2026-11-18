@@ -41,7 +41,7 @@ def app():
 
           return expense
        elif choice==2:
-          show_expenses()
+          show_expenses(Title,Amount,Categories)
        elif choice==3:
           Title=input("Enter Title:")
           Amount=input("Enter Amount:")
@@ -66,7 +66,17 @@ def app():
              else:
                 print("Title not found")
        elif choice==6:
-        total = sum(float(expense["Amount"]) for expense in expenses)
-        print("Total Expenses:", total)  
+        total_exspenses()
+       elif choice==7:
+         for ca in CATEGORIES:
+           print(ca)
+       elif choice==8:
+          export_to_CSV()
+       elif choice==0:
+          print("App was exiting...")
+          break
+       else:
+          print("404 have problem")
+          continue
     except:
        print("There Have Problem")
